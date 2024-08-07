@@ -3,7 +3,7 @@
 * Name: Clearly state the product’s name.
 * Description: Provide a concise yet informative summary of the product, highlighting its key features and benefits.
 
-* Add to Cart Functionality
+*- Add to Cart Functionality
 1. Add to Cart Button
 Action: When tapped, the product is added to the user's shopping cart.
 
