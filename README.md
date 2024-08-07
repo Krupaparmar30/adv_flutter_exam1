@@ -1,5 +1,8 @@
 # adv_flutter_exam1
-
+* Product Name and Description
+* 
+* Name: Clearly state the product’s name.
+* Description: Provide a concise yet informative summary of the product, highlighting its key features and benefits.
 A new Flutter project.
 
   <img src="https://github.com/user-attachments/assets/012dd2b3-39ee-4989-a0c9-7d8801d2f207" height=28% width=32%>
