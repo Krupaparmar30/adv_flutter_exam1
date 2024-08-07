@@ -1,3 +1,4 @@
+import 'package:adv_flutter_exam1/provider/cart_provider.dart';
 import 'package:adv_flutter_exam1/provider/product_provider.dart';
 import 'package:adv_flutter_exam1/view/cart/cart.dart';
 import 'package:adv_flutter_exam1/view/detail/details.dart';
@@ -21,6 +22,8 @@ class myApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => ProductProvider(),),
+        ChangeNotifierProvider(create: (context) => CartProvider(),),
+
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

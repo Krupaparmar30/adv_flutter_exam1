@@ -50,16 +50,16 @@
 class ProductModal{
   late int id;
   late String title, description, category, image;
+  late  dynamic price;
 
-//  late Rating rating;
   ProductModal(
       {required this.id,
       required this.title,
       required this.description,
       required this.category,
       required this.image,
+        required this.price,
 
-      //required this.rating
       });
 
   factory ProductModal.fromJson(Map m1) {
@@ -69,20 +69,9 @@ class ProductModal{
         description: m1['description'],
         category: m1['category'],
         image: m1['image'],
-       // rating: Rating.fromJson(m1['rating'])
+       price: m1['price'],
     );
   }
 
 
 }
-// class Rating{
-//   late double rate;
-//   late int count;
-//
-//   Rating({required this.rate, required this.count});
-//
-//   factory Rating.fromJson(Map m1) {
-//     return Rating(rate: m1['rate'].toDouble, count: m1['count']);
-//   }
-//
-// }

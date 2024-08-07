@@ -27,8 +27,10 @@ class spPage extends StatelessWidget {
                      image: AssetImage(
                        'assets/images/sp.jpg'
                      )
-                   )
+                   ),
+
                  ),
+
                ),
              ),
            )

@@ -1,3 +1,4 @@
+import 'package:adv_flutter_exam1/provider/cart_provider.dart';
 import 'package:adv_flutter_exam1/view/detail/details.dart';
 import 'package:adv_flutter_exam1/view/home_page/home_page.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,8 @@ class cartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CartProvider cartProviderT = Provider.of(context, listen: true);
+    CartProvider cartProviderF = Provider.of(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(
@@ -34,16 +37,21 @@ class cartPage extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                              cartList[index].category),
+                          child: Text(cartList[index].category,style: TextStyle(
+                            fontSize: 18,fontWeight: FontWeight.w500
+                          ),),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                              cartList[index].title),
+                          child: Text(cartList[index].title),
                         ),
+                        Text(qty[index].toString()),
                         GestureDetector(
-                            child: Icon(Icons.delete))
+                            onTap: () {
+                              cartProviderF.removeqtyAll(index);
+                            },
+                            child: Icon(Icons.delete)),
+
                       ],
                     ),
                   ),

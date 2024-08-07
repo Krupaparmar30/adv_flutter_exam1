@@ -32,7 +32,7 @@ class detailPage extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Colors.grey.shade50,
                           image: DecorationImage(
-                              fit: BoxFit.cover,
+
                               image: NetworkImage(productProviderFalse
                                   .productList[selIndex].image))),
                     ),
@@ -49,66 +49,70 @@ class detailPage extends StatelessWidget {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                                productProviderFalse
-                                    .productList[selIndex].title,
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 16)),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              productProviderFalse
-                                  .productList[selIndex].category,
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 22),
-                            ),
-                            SizedBox(
-                              height: 50,
-                            ),
-                            Container(
-                              color: Colors.grey.shade200,
-                              child: Text(
-                                productProviderFalse
-                                    .productList[selIndex].description,
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 18),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.vertical,
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 20,
                               ),
-                            ),
-                            SizedBox(
-                              height: 50,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: GestureDetector(
-                                onDoubleTap: () {
-                                  cartList.add(productProviderFalse
-                                      .productList[selIndex]);
-                                  for (int i = 0;
-                                      i <
-                                          productProviderFalse
-                                              .productList.length;
-                                      i++) {
-                                    qty.add;
-                                  }
-                                  Navigator.of(context).pushNamed('/cart');
-                                },
-                                child: Container(
-                                  height: 100,
-                                  width: 150,
-                                  decoration: BoxDecoration(
-                                      color: Colors.grey.shade200,
-                                      borderRadius: BorderRadius.circular(10)),
-                                  child: Center(child: Text('ADD TO CART')),
+                              Text(
+                                productProviderFalse
+                                    .productList[selIndex].category,
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 22),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                  productProviderFalse
+                                      .productList[selIndex].title,
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 16)),
+                              SizedBox(
+                                height: 50,
+                              ),
+                              Container(
+                                color: Colors.grey.shade200,
+                                child: Text(
+                                  productProviderFalse
+                                      .productList[selIndex].description,
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 18),
                                 ),
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                height: 50,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: GestureDetector(
+                                  onDoubleTap: () {
+                                    cartList.add(productProviderFalse
+                                        .productList[selIndex]);
+                                    for (int i = 0;
+                                        i <
+                                            productProviderFalse
+                                                .productList.length;
+                                        i++) {
+                                      qty.add(1);
+                                    }
+                                    Navigator.of(context).pushNamed('/cart');
+                                  },
+                                  child: Container(
+                                    height: 100,
+                                    width: 200,
+                                    decoration: BoxDecoration(
+                                        color: Colors.grey.shade200,
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Center(child: Text('ADD TO CART')),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

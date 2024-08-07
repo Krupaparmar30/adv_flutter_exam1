@@ -11,13 +11,12 @@ class home_page extends StatelessWidget {
 
   Widget build(BuildContext context) {
     ProductProvider productProviderTrue =
-    Provider.of<ProductProvider>(context, listen: true);
+        Provider.of<ProductProvider>(context, listen: true);
     ProductProvider productProviderFalse =
-    Provider.of<ProductProvider>(context, listen: false);
+        Provider.of<ProductProvider>(context, listen: false);
 
     return Scaffold(
-      appBar: AppBar
-        (
+      appBar: AppBar(
         title: Text('Home Page'),
       ),
       body: FutureBuilder(
@@ -26,14 +25,14 @@ class home_page extends StatelessWidget {
           if (snapshot.hasData) {
             return GridView.builder(
               gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
               itemCount: productProviderFalse.productList.length,
               itemBuilder: (context, index) {
                 return SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: GestureDetector(
                     onDoubleTap: () {
-                      selIndex=index;
+                      selIndex = index;
                       Navigator.of(context).pushNamed('/next');
                     },
                     child: Column(
@@ -44,12 +43,13 @@ class home_page extends StatelessWidget {
                             height: 180,
                             width: 200,
                             decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey,
-                                  spreadRadius: 2,blurRadius: 2,offset: Offset(0,2)
-                                )
-                              ],
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey,
+                                      spreadRadius: 2,
+                                      blurRadius: 2,
+                                      offset: Offset(0, 2))
+                                ],
                                 color: Colors.white,
                                 image: DecorationImage(
                                     image: NetworkImage(productProviderFalse
@@ -62,14 +62,18 @@ class home_page extends StatelessWidget {
                                     height: 50,
                                     width: 200,
                                     decoration: BoxDecoration(
-                                        color: Colors.grey.shade50
+                                        color: Colors.grey.shade50),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                            "Price : ${productProviderFalse.productList[index].price.toString()}"),
+                                        Text(productProviderFalse
+                                            .productList[index].category),
+                                      ],
                                     ),
-                                    child: Text(
-                                        productProviderFalse.productList[index].title),
                                   ),
                                 )
                               ],
-
                             ),
                           ),
                         ),
@@ -87,4 +91,5 @@ class home_page extends StatelessWidget {
     );
   }
 }
-int selIndex=0;
+
+int selIndex = 0;
