@@ -2,6 +2,7 @@ import 'package:adv_flutter_exam1/provider/product_provider.dart';
 import 'package:adv_flutter_exam1/view/cart/cart.dart';
 import 'package:adv_flutter_exam1/view/detail/details.dart';
 import 'package:adv_flutter_exam1/view/home_page/home_page.dart';
+import 'package:adv_flutter_exam1/view/sp_page/sp_page.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,8 @@ class myApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
 
         routes: {
-          '/':(context)=>home_page(),
+          '/':(context)=>spPage(),
+          '/home':(context)=>home_page(),
           '/next':(context)=>detailPage(),
           '/cart':(context)=>cartPage()
         },

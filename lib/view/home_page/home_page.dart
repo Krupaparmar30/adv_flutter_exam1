@@ -44,6 +44,12 @@ class home_page extends StatelessWidget {
                             height: 180,
                             width: 200,
                             decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  spreadRadius: 2,blurRadius: 2,offset: Offset(0,2)
+                                )
+                              ],
                                 color: Colors.white,
                                 image: DecorationImage(
                                     image: NetworkImage(productProviderFalse

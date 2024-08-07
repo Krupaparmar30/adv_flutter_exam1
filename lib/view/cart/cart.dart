@@ -10,10 +10,7 @@ class cartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ProductProvider productProviderTrue =
-        Provider.of<ProductProvider>(context, listen: true);
-    ProductProvider productProviderFalse =
-        Provider.of<ProductProvider>(context, listen: false);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart Page'),
@@ -38,14 +35,15 @@ class cartPage extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                              productProviderFalse.productList[index].category),
+                              cartList[index].category),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                              productProviderFalse.productList[index].title),
+                              cartList[index].title),
                         ),
-                        Icon(Icons.delete)
+                        GestureDetector(
+                            child: Icon(Icons.delete))
                       ],
                     ),
                   ),

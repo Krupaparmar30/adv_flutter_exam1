@@ -89,10 +89,13 @@ class detailPage extends StatelessWidget {
                                 onDoubleTap: () {
                                   cartList.add(productProviderFalse
                                       .productList[selIndex]);
-                                  for(int i=0;i<productProviderFalse.productList.length;i++)
-                                    {
-                                      qty.add;
-                                    }
+                                  for (int i = 0;
+                                      i <
+                                          productProviderFalse
+                                              .productList.length;
+                                      i++) {
+                                    qty.add;
+                                  }
                                   Navigator.of(context).pushNamed('/cart');
                                 },
                                 child: Container(
@@ -123,4 +126,4 @@ class detailPage extends StatelessWidget {
 }
 
 List cartList = [];
-List<int> qty=[];
+List<int> qty = [];
