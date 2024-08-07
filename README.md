@@ -3,6 +3,17 @@
 * Name: Clearly state the product’s name.
 * Description: Provide a concise yet informative summary of the product, highlighting its key features and benefits.
 
+* Add to Cart Functionality
+1. Add to Cart Button
+Action: When tapped, the product is added to the user's shopping cart.
+
+* 1. Cart Screen
+Product List: Display a list of products currently in the cart.
+Remove Button: Each item in the cart should have a delete or remove button.
+
+*2. Delete Action
+Confirmation: Ask for confirmation before permanently removing an item from the cart to prevent accidental deletions.
+
   
 A new Flutter project.
 
