@@ -1,7 +1,7 @@
 # adv_flutter_exam1
 # 🛍️🛍️🛍️ Product App 🛍️🛍️🛍️
 
-# 🛍️ Product Name and Description 🛍️
+# Product Name and Description 
 * Name: Clearly state the product’s name.
 * Description: Provide a concise yet informative summary of the product, highlighting its key features and benefits.
 
